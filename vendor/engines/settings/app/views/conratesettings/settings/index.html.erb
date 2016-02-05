@@ -1,0 +1,17 @@
+<%= do_index({
+  title: t(".settings"),
+  columns: [
+    Btemplater::IndexDecorator.new(:var, lambda { |d, o| o.localizable ? t("settings.vars.#{o.var}") : o.var }),
+    :value
+  ],
+  items: @objects,
+  model: ::Settings,
+  actions: [
+      :show,
+      :edit,
+      :destroy
+  ]
+  })
+%>
+
+<%#= do_new_button({model: Conratesettings::Role.new}) %>

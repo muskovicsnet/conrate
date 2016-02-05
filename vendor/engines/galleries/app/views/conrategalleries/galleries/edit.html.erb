@@ -1,0 +1,9 @@
+<%= Layout::ApplicationHelper.create_header(t('.title')) %>
+
+<%= simple_form_for @my_obj do |f| %>
+  <%= f.input :title, autofocus: true %>
+  <%= f.input :description %>
+  <%= f.input :socials %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= link_to t('.cancel'), galleries_path, class: 'btn btn-default' %>
+<% end %>

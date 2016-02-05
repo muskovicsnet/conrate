@@ -1,0 +1,18 @@
+<%= do_new({
+    title: t(".blogs"),
+    columns: [
+      Btemplater::NewDecorator.new(
+        :title,
+        Proc.new do |f, c|
+          f.input :title, autofocus: true
+        end
+      ),
+      :description
+    ],
+    item: @obj,
+    model: Conrateblogs::Blog,
+    url: conrateblogs.blogs_path,
+    back_url: main_app.home_path,
+    method: :post
+  })
+%>

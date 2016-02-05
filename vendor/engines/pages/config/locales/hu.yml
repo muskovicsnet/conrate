@@ -1,0 +1,22 @@
+hu:
+  conratemenus:
+    menuabletypes:
+      'Conratepages::Page':
+        name: 'Oldal'
+  conratepages:
+    sidebar:
+      pages: 'Új oldal'
+    pages:
+      new:
+        pages: 'Új oldal'
+      edit:
+        page: 'Oldal szerkesztése'
+  activerecord:
+    models:
+      'conratepages/page': 'Oldal'
+    attributes:
+      'conratepages/page':
+        id: 'AZ'
+        title: 'Cím'
+        content: 'Tartalom'
+        created_at: 'Létrehozva'

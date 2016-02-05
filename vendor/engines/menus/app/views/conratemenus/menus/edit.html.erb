@@ -1,0 +1,35 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    window.conratemenu.setTargetTypes($('#menu_menuable_type'), $('#menu_menuable_id'), "<%= params[:locale] %>", '<%= @obj.menuable_type %>', '<%= @obj.menuable_id %>');
+  });
+</script>
+
+<%= do_edit({
+    title: t(".edit"),
+    columns: [
+      Btemplater::NewDecorator.new(
+        :title,
+        Proc.new do |f, c|
+          f.input :title, autofocus: true
+        end
+      ),
+      Btemplater::NewDecorator.new(
+        :menuable_type,
+        Proc.new do |f, c|
+          f.input :menuable_type, collection: Conratemenus::Menuabletype.all.map { |mt| [mt.my_name, mt.id]  }, include_blank: true, :input_html => { onchange: 'window.conratemenu.setTargetIDs($("#menu_menuable_id"), this.value, false)' }
+        end
+      ),
+      Btemplater::NewDecorator.new(
+        :menuable_id,
+        Proc.new do |f, c|
+          f.input :menuable_id, collection: []
+        end
+      )
+    ],
+    item: @obj,
+    model: Conratemenus::Menu,
+    url: conratemenus.menu_path(@obj),
+    back_url: @obj,
+    method: :post
+  })
+%>

@@ -1,0 +1,3 @@
+<%= link_to do_title(@obj.title, [edit_action(nil, [@blog, @obj], Conrateblogs::PostPolicy.new(current_user, @obj).edit?), destroy_action(nil, [@blog, @obj], Conrateblogs::PostPolicy.new(current_user, @obj).destroy?)]), [@blog, @obj] %>
+
+<%= @obj.content.html_safe %>

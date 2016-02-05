@@ -1,0 +1,17 @@
+<%= do_title @obj.name, [edit_action(nil, @obj, Conratewebshop::CategoryPolicy.new(current_user, @obj).edit?), destroy_action(nil, @obj, Conratewebshop::CategoryPolicy.new(current_user, @obj).destroy?)] %>
+
+<%= paginate @products %>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-sm-6">
+      <%= render product %>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @products %>
+
+<div class="form-actions">
+  <%= link_to t('.new_product'), conratewebshop.new_category_product_path(@obj), class: 'btn btn-primary' if Conratewebshop::ProductPolicy.new(current_user, Conratewebshop::Product).new? %>
+</div>

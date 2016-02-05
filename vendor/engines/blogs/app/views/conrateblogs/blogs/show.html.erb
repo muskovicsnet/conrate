@@ -1,0 +1,17 @@
+<%= do_show({
+    title: @obj.title,
+    my_content: 'show_content',
+    item: @obj,
+    model: Conrateblogs::Blog,
+    url: conrateblogs.blogs_path,
+    no_back: true,
+    titleactions: [
+      edit_action(nil, @obj, Conrateblogs::PostPolicy.new(current_user, @obj).edit?),
+      destroy_action(nil, @obj, Conrateblogs::PostPolicy.new(current_user, @obj).destroy?)
+    ],
+    actions: [
+      (link_to(conrateblogs.new_blog_post_path(@obj), class: 'btn btn-primary') do
+        "<span class=\"fa fa-plus-square\"></span> #{t('.new_post')}".html_safe
+      end if(Conrateblogs::PostPolicy.new(current_user, @obj).new?))
+    ]
+  }) %>

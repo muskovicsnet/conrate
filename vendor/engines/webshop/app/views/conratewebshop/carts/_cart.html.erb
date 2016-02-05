@@ -1,0 +1,27 @@
+<div class="box">
+  <div class="title_inner_block">
+    <div class="box-heading"><%= t('.cart') %></div>
+  </div>
+  <div class="box-content left-category">
+    <table class="table table-responsive table-condensed">
+      <% cart.line_items.each do |li| %>
+        <%= render('conratewebshop/line_items/line_item', line_item: li) %>
+      <% end %>
+        <% cart.pricemanipulators.each do |pm| %>
+          <tr class="pricemanipulators_line">
+            <td colspan="2"><%= pm[0] %></td>
+            <td><%= number_to_currency pm[1] %></td>
+          </tr>
+        <% end %>
+      <tr class="total_line">
+        <td colspan="2"><%= t('.total') %></td>
+        <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div>
+    <%= link_to t('.checkout'), conratewebshop.new_order_path, method: :get, class: 'btn btn-default' %>
+    <%= link_to t('.empty_cart'), conratewebshop.cart_path(cart), method: :delete, confirm: 'Are you sure?', class: 'btn btn-default' %>
+  </div>
+</div>

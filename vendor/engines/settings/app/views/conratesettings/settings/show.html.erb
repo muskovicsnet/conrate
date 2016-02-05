@@ -1,0 +1,14 @@
+<%= do_show({
+    title: @obj.var,
+    columns: [
+      Btemplater::ShowDecorator.new(:id, {}),
+      Btemplater::ShowDecorator.new(:var, {}),
+      Btemplater::ShowDecorator.new(:value, {}),
+    ],
+    item: @obj,
+    model: Settings,
+    url: conratesettings.settings_path,
+    actions: [
+    ]
+  })
+%>

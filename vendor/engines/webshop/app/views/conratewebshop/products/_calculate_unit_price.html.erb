@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  function unitprice_quantity_unit_changed() {
+    quantity = $('#product_quantity').val();
+    from_quantity_unit_id = $('#product_quantity_unit_id').val();
+    to_quantity_unit_id = $('#product_unitprice_quantity_unit_id').val();
+    price = $('#product_price').val();
+    url = "<%= quantity_unit_convert_path('placeholder_from', 'placeholder_to', 'placeholder_quantity', 'placeholder_price') %>";
+    url = url.replace('placeholder_from', from_quantity_unit_id).replace('placeholder_to', to_quantity_unit_id).replace('placeholder_quantity', quantity).replace('placeholder_price', price);
+    $.ajax({
+      url: url
+    }).done(function(data) {
+      console.log(data);
+      $('#product_unitprice').val(data);
+    });
+  }
+</script>

@@ -1,0 +1,13 @@
+<%= do_edit({
+    title: t(".setting"),
+    columns: [
+      :var,
+      :value
+    ],
+    item: @obj,
+    model: ::Settings,
+    url: conratesettings.setting_path(@obj),
+    back_url: conratesettings.settings_path,
+    method: :post
+  })
+%>

@@ -1,0 +1,7 @@
+<%= do_title t('.menus') %>
+
+<ol class="sortable_tree" data-max_levels="4" data-rebuild_url = '<%= conratemenus.rebuild_menus_url %>' >
+  <%= build_server_tree(Conratemenus::Menu.all.order('lft ASC'), type: :sortable, title: 'my_title') %>
+</ol>
+
+<%= do_new_button({model: Conratemenus::Menu.new}) %>

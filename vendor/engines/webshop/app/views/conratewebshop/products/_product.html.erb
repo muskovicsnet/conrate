@@ -1,0 +1,26 @@
+<div class="conratewebshop-product">
+  <div class="thumb">
+    <%= link_to conratewebshop.category_product_path(product.category_id, product) do %>
+      <div class="inner">
+        <p class="image"><%= image_tag product.picture.thumb, class: 'responsive, img-thumbnail', style: 'width:100%' %></p>
+        <h4><%= link_to product.name, conratewebshop.category_product_path(product.category_id, product) %></h4>
+        <p><%#= product.description.html_safe %></p>
+        <p class="price"><%= number_to_currency product.price, locale: :hu %></p>
+        <% if product.unitprice && product.quantity_unit %>
+          <p class="unitprice">(<%= number_to_currency product.unitprice, locale: :hu %>/<%= product.unitprice_quantity_unit.try(:get_abbr) %>)</p>
+        <% end %>
+        <p>
+          <%= edit_action(nil, [product.category, product], Conratewebshop::ProductPolicy.new(current_user, product).edit?) %>
+          <%= destroy_action(nil, [product.category, product], Conratewebshop::ProductPolicy.new(current_user, product).destroy?) %>
+        </p>
+        <p>
+          <% if user_signed_in? %>
+            <%= link_to(t('.add_to_cart'), conratewebshop.category_product_line_items_path(product.category_id, product), class: 'btn btn-warning', method: :post, remote: false) %>
+          <% else %>
+            <%= link_to(t('.add_to_cart'), conratesecurity.new_user_session_path, class: 'btn btn-warning') %>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>

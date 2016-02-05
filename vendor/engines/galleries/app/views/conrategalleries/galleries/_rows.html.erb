@@ -1,0 +1,5 @@
+<td><%= result.id %></td>
+<td><%= result.title %></td>
+<td><%= result.description %></td>
+<td><%= l(result.updated_at) %></td>
+<td style="text-align:right"><%= get_links(result, gallery_path(result), edit_gallery_path(result), gallery_path(result), Conrategalleries::GalleryPolicy) %></td>

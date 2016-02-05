@@ -1,0 +1,34 @@
+<%= do_edit({
+    title: t(".edit_pricemanipulator"),
+    columns: [
+      :name,
+      :order,
+      :code,
+      :perproduct,
+      :showifzero
+    ],
+    item: @obj,
+    model: Conratewebshop::Pricemanipulator,
+    url: conratewebshop.pricemanipulator_path(@obj),
+    back_url: conratewebshop.pricemanipulators_path,
+    method: :post
+  })
+%>
+
+<pre style="margin-top: 25px">
+  Matematikai: + - * / %
+               SIN, COS, TAN, ...
+  Logikai: < > <= >= <> != = AND OR
+  Függvények: IF NOT MIN MAX ROUND ROUNDDOWN ROUNDUP
+  Változók: total_price: teljes összeg kedv. nélkül
+            city: szállítási cím város része
+            payment_method: fizetési mód
+            total_weight: teljes súly
+            total_size: teljes méret
+            user_id: felhasználó azonosítója
+  Például: kedvezmény 150Ft felett:
+             if (total_price > 150, -100, 0)
+           kedvezmény az 1-es felhasználónak:
+             if(user_id==1, -1*total_price*0.1, 0)
+
+</pre>

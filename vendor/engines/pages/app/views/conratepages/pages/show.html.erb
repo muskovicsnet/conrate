@@ -1,0 +1,3 @@
+<%= do_title @obj.title, [edit_action(nil, @obj, Conratepages::PagePolicy.new(current_user, @obj).edit?), destroy_action(nil, @obj, Conratepages::PagePolicy.new(current_user, @obj).destroy?)] %>
+
+<%= @obj.content.html_safe %>

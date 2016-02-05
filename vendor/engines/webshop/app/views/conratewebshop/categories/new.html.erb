@@ -1,0 +1,23 @@
+<%= do_new({
+    title: t(".category"),
+    columns: [
+      Btemplater::NewDecorator.new(
+        :name,
+        Proc.new do |f, c|
+          f.input :name, autofocus: true
+        end
+      ),
+      Btemplater::NewDecorator.new(
+        :parent_id,
+        Proc.new do |f, c|
+          f.input :parent_id, collection: Conratewebshop::Category.where('name <> ?', '.system_root').order('name').map {|c| [c.name, c.id]}
+        end
+      )
+    ],
+    item: @obj,
+    model: Conratewebshop::Category,
+    url: conratewebshop.categories_path,
+    back_url: main_app.home_path,
+    method: :post
+  })
+%>

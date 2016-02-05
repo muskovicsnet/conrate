@@ -1,0 +1,8 @@
+hu:
+  settings:
+    vars:
+      conratethemes:
+        theme: 'Téma'
+        ga_number: 'Google analytics azonosító'
+        homepage: 'Kezdőoldal'
+  conratethemes:

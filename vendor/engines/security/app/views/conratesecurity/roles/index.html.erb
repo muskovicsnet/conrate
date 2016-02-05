@@ -1,0 +1,19 @@
+<%= do_index({
+  title: t(".roles"),
+  # rowclass: lambda { |d, o| d.unread ? 'unread' : 'read' },
+  columns: [
+    :id,
+    :my_name,
+    # Btemplater::IndexDecorator.new(:name, lambda { |d, o| d.try(:my_name) }),
+    Btemplater::IndexDecorator.new(:created_at, lambda { |d, o| l(d) })
+  ],
+  items: @objects,
+  model: Conratesecurity::Role,
+  actions: [
+      :show,
+      :destroy
+  ]
+  })
+%>
+
+<%= do_new_button({model: Conratesecurity::Role.new}) %>

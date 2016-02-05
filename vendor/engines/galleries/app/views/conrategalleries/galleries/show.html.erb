@@ -1,0 +1,88 @@
+<%= do_title @obj.title, [edit_action(nil, @obj, Conrategalleries::GalleryPolicy.new(current_user, @obj).edit?), destroy_action(nil, @obj, Conrategalleries::GalleryPolicy.new(current_user, @obj).destroy?)] %>
+
+<%= @obj.description %>
+<hr />
+<div class="container">
+    <div class="row wrapper-parent gallery-container" id="galleries-photo-list">
+        <% @photos.order('ordernum, id').each do |photo| %>
+  		    <%= render photo %>
+        <% end %>
+    </div>
+</div>
+
+<% if Conrategalleries::GalleryPolicy.new(current_user, @obj).edit? %>
+  <%= simple_form_for @obj.photos.build, url: gallery_photos_path(@obj) do |f| %>
+    <%= f.label :file, t('.upload_photos') %>
+    <%= f.file_field :file, multiple: true, name: 'photo[file]' %>
+  <% end %>
+<% end %>
+
+<script type="text/x-tmpl" id="template-upload">
+<div class="upload" id="galleries-photo-progress-{%=o.id%}">
+  {%=o.title%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    	<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<br />
+
+<% if Conrategalleries::GalleryPolicy.new(current_user, @obj).save_order? %>
+  <style>
+    #galleries-photo-list { list-style-type: none; margin: 0; padding: 0; cursor: move; }
+    #galleries-photo-list li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+    .galleries-photo-title {
+      cursor: text;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function save_order() {
+      dataurl = $('#galleries-photo-list').sortable('serialize', {key: 'order'})
+      $.ajax({
+        method: 'POST',
+        url: '<%= gallery_save_order_path(@obj) %>',
+        data: {
+          order: $.map(dataurl.split('&'), function(map, i) {return([map.split('=')[1]])})
+        }
+      });
+    };
+
+    $(document).ready(function() {
+        $(function() {
+          $( "#galleries-photo-list" ).sortable({
+            update: function(event, ui) {
+              save_order();
+            }
+          });
+          $( "#galleries-photo-list" ).disableSelection();
+        });
+      });
+  </script>
+<% end %>
+<br />
+<%= social_share_button_tag(@obj.title) if @obj.socials %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    jQuery(".galleries-photo-title-editor").best_in_place();
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({});
+    });
+  });
+</script>

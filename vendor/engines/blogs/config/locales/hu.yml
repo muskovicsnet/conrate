@@ -1,0 +1,35 @@
+hu:
+  conratemenus:
+    menuabletypes:
+      'Conrateblogs::Blog':
+        name: 'Webnapló'
+  conrateblogs:
+    sidebar:
+      blogs: 'Új napló'
+    blogs:
+      show:
+        new_post: 'Új bejegyzés'
+      new:
+        blogs: 'Új napló'
+      edit:
+        blogs: 'Napló szerkesztése'
+    posts:
+      new:
+        posts: 'Új bejegyzés'
+      edit:
+        post: 'Bejegyzés szerkesztése'
+  activerecord:
+    models:
+      'conrateblogs/blog': 'Napló'
+      'conrateblogs/post': 'Bejegyzés'
+    attributes:
+      'conrateblogs/blog':
+        id: 'AZ'
+        title: 'Név'
+        description: 'Leírás'
+        created_at: 'Létrehozva'
+      'conrateblogs/post':
+        id: 'AZ'
+        title: 'Cím'
+        content: 'Tartalom'
+        created_at: 'Létrehozva'

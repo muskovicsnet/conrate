@@ -1,0 +1,15 @@
+<%= do_show({
+    title: t(@obj.name),
+    columns: [
+      Btemplater::ShowDecorator.new(:id, {}),
+      Btemplater::ShowDecorator.new(:name, {}),
+      Btemplater::ShowDecorator.new(:code, {}),
+      Btemplater::ShowDecorator.new(:created_at, {}),
+    ],
+    item: @obj,
+    model: Conratewebshop::Pricemanipulator,
+    url: conratewebshop.pricemanipulators_path,
+    actions: [
+    ]
+  })
+%>

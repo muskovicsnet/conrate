@@ -1,0 +1,39 @@
+  <div class="conratewebshop-show-product">
+    <div class="image">
+      <%= image_tag @obj.picture, class: 'img-rounded', style: 'width:100%' %>
+    </div>
+
+    <div class="product-description">
+      <%= do_title @obj.name %>
+
+      <table class="table table-responsive table-condensed table-striped">
+        <tr>
+          <td class="price"><%= t('.price') %></td>
+          <td class="price-value"><%= number_to_currency @obj.price %></td>
+        </tr>
+        <% if @obj.unitprice && @obj.quantity_unit %>
+          <tr>
+            <td class="price"><%= t('.unitprice') %></td>
+            <td class="price-value"><%= number_to_currency @obj.unitprice, locale: :hu %>/<%= @obj.unitprice_quantity_unit.try(:get_abbr) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+      <div class="description">
+        <%= @obj.description.html_safe %>
+      </div>
+    </div>
+  </div>
+
+<div class="actions">
+  <% url = conratewebshop.category_product_url(@obj.category_id, @obj).to_s %>
+  <div class="social">
+    <%= social_share_button_tag(@obj.name, url: url) %>
+  </div>
+  <% if user_signed_in? %>
+    <%= link_to(t('.add_to_cart'), conratewebshop.category_product_line_items_path(@obj.category_id, @obj), class: 'btn btn-warning', method: :post, remote: false) %>
+  <% else %>
+    <%= link_to(t('.add_to_cart'), conratesecurity.new_user_session_path, class: 'btn   btn-warning') %>
+  <% end %>
+  <%= link_to t('.back'), conratewebshop.category_path(@obj.category_id), class: 'btn btn-default' %>
+</div>

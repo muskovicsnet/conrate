@@ -1,0 +1,27 @@
+<li class="dropdown">
+  <% if user_signed_in? %>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to t('.my_profile'), conratesecurity.edit_user_registration_path %>
+      </li>
+      <%#= render 'pamer/shared/usermenu' %>
+      <li role="separator" class="divider"></li>
+      <li>
+        <%= link_to t('.sign_out'), conratesecurity.destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  <% else %>
+    <%= link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown', role: 'button', 'aria-haspopup' => true, 'aria-expanded' => false do %>
+      <%= t('.sign_in') %> <span class="caret"></span>
+    <% end %>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to t('.sign_in'), conratesecurity.new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to t('.sign_up'), conratesecurity.new_user_registration_path %>
+      </li>
+    </ul>
+  <% end %>
+</li>

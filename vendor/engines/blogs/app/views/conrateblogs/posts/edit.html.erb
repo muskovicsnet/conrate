@@ -1,0 +1,18 @@
+<%= do_edit({
+    title: t(".post"),
+    columns: [
+      :title,
+      Btemplater::NewDecorator.new(
+        :content,
+        Proc.new do |f, c|
+          f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+        end
+      )
+    ],
+    item: @obj,
+    model: Conrateblogs::Post,
+    url: conrateblogs.blog_post_path(@obj.blog, @obj),
+    back_url: conrateblogs.blog_path(@obj.blog),
+    method: :post
+  })
+%>

@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require 'conrategalleries/ekko-lightbox.css'
+ *= require_self
+ */
+
+.gallery-container {
+  text-align: center;
+}
+.gallery-container ul {
+  padding:0 0 0 0;
+  margin:0 0 0 0;
+}
+.gallery-container ul li {
+  list-style: none;
+  margin-bottom: 25px;
+}
+.gallery-container ul li img {
+    cursor: pointer;
+}
+.gallery-container .controls{
+  width:50px;
+  display:block;
+  font-size:11px;
+  padding-top:8px;
+  font-weight:bold;
+}
+.gallery-container .next {
+    float:right;
+    text-align:right;
+}
+.galleries-photo-title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 600;
+  font-weight: bold;
+  height: 20px;
+}
+
+.upload {
+  border-top: solid 1px #CCC;
+  width: 400px;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.upload .progress {
+  margin-top: 8px;
+  border: solid 1px #555;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+.upload .progress .bar {
+  height: 20px;
+  background: #3EC144;
+}
+#galleries-photo-list div .col-sm-4 {
+  padding-left: 0px !important;
+  margin-left: 0px;
+}

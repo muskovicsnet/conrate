@@ -1,0 +1,67 @@
+hu:
+  devise:
+    confirmations:
+      confirmed: "A fiók megerősítése sikerült, kérjük jelentkezzen be."
+      send_instructions: "Hamarosan E-mail-t fog kapni melyben leírjuk hogyan erősítse meg fiókját."
+      send_paranoid_instructions: "Ha érvényes E-mail címet adott meg, hamarosan elküldjük E-mail-ben a megerősítési információkat."
+    failure:
+      already_authenticated: "Ön már be van jelentkezve."
+      inactive: "A fiók még nincs aktíválva."
+      invalid: "Érvénytelen azonosító, e-mail vagy jelszó."
+      locked: "A fiók zárolva van."
+      last_attempt: "A legközelebbi hibás bejelentkezés esetén zároljuk a fiókját."
+      not_found_in_database: "Érvénytelen azonosító, e-mail vagy jelszó."
+      timeout: "A munkamenet lejárt. Kérjük jelentkezzen be újra a folytatáshoz."
+      unauthenticated: "Bejelentkezés vagy regisztráció szükséges a folytatáshoz."
+      unconfirmed: "Meg kell erősítenie a fiókját a folytatáshoz."
+      user:
+        already_authenticated: "Ön már be van jelentkezve."
+        inactive: "A fiók még nincs aktíválva."
+        invalid: "Érvénytelen azonosító, e-mail vagy jelszó."
+        locked: "A fiók zárolva van."
+        last_attempt: "A legközelebbi hibás bejelentkezés esetén zároljuk a fiókját."
+        not_found_in_database: "Érvénytelen azonosító, e-mail vagy jelszó."
+        timeout: "A munkamenet lejárt. Kérjük jelentkezzen be újra a folytatáshoz."
+        unauthenticated: "Bejelentkezés vagy regisztráció szükséges a folytatáshoz."
+        unconfirmed: "Meg kell erősítenie a fiókját a folytatáshoz."
+    mailer:
+      confirmation_instructions:
+        subject: "Megerősítési információk"
+      reset_password_instructions:
+        subject: "Új jelszó igénylése"
+      unlock_instructions:
+        subject: "Fiók feloldása"
+    omniauth_callbacks:
+      failure: "Sikertelen %{kind} azonosítás. Oka: \"%{reason}\"."
+      success: "Sikeres %{kind} azonosítás."
+    passwords:
+      no_token: "Nem érheti el az oldalt, csak ha a jelszó visszaállító E-mail-ből érkezik. Kérjük győződjön meg róla, hogy a teljes URL-t bemásolta."
+      send_instructions: "Hamarosan E-mail-t kap a jelszó visszaállításával kapcsolatban."
+      send_paranoid_instructions: "Ha létezik az E-mail címe az adatbázisunkban, hamarosan E-mail-t kap a jelszó visszaállításával kapcsolatban."
+      updated: "A jelszava sikeresen megváltozott. Ön be van jelentkezve."
+      updated_not_active: "A jelszava sikeresen megváltozott."
+    registrations:
+      destroyed: "A fiókja sikeresen törölve lett. Viszont látásra!"
+      signed_up: "Üdvözöljük! Sikeresen regisztrált."
+      signed_up_but_inactive: "Sikeresen regisztrált. Azonban addig nem jelentkezhet be, míg nem aktíválja a fiókját."
+      signed_up_but_locked: "Sikeresen regisztrált. Azonban addig nem jelentkezhet be, míg a fiókja zárolva van."
+      signed_up_but_unconfirmed: "E-mail-t küldtünk a megerősítési információkkal kapcsolatban. Kérjük használja a benne található hivatkozást."
+      update_needs_confirmation: "A fiókja sikeresen frissítve lett, Azonban ellenőriznünk kell az új E-mail címét. Kérjük figyelje E-mail postafiókját és kattintson a megerősítési hivatkzásra az új címének megerősítéséhez."
+      updated: "A fiók adatai sikeresen frissítve lettek."
+    sessions:
+      signed_in: "Sikeres bejelentkezés."
+      signed_out: "Sikeres kijelentkezés."
+    unlocks:
+      send_instructions: "hamarosan megkapja E-mail-ben az utasításokat, hogyan oldja fel a zárolást."
+      send_paranoid_instructions: "Ha létezik a fiókja, hamarosan megkapja E-mail-ben az utasításokat, hogyan oldja fel a zárolást."
+      unlocked: "A fiók sikeresen fel lett oldva. Kérjük jelentkezzen be a folytatáshoz."
+  errors:
+    messages:
+      already_confirmed: "már meg van erősítve, próbáljon meg bejelentkezni"
+      confirmation_period_expired: "%{period} időközönként szükséges megerősíteni, kérjük igényeljen újat"
+      expired: "lejárt, kérjük igényeljen újat"
+      not_found: "nem található"
+      not_locked: "nem zárolható"
+      not_saved:
+        one: "%{resource} nem menthető mert:"
+        other: "%{resource} nem menthető %{count} hiba miatt:"

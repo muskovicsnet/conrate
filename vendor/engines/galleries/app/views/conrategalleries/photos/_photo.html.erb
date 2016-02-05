@@ -1,0 +1,10 @@
+<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 <%= Conrategalleries::GalleryPolicy.new(current_user, photo.gallery).save_order? ? 'ui-state-default' : '' %>" id="galleries-photo-<%= photo.id %>">
+  <%= link_to image_path(photo.file.url), 'data-toggle' => 'lightbox', 'data-gallery' => 'multiimages', 'data-title' => photo.title, class: 'col-sm-4', 'data-parent' => '.wrapper-parent', style: 'width:100%' do %>
+    <%= image_tag photo.file.thumbnail, 'data-fullurl' => photo.file.url, 'data-title' => photo.title, class: 'img-responsive', width: '100%' %>
+  <% end %>
+  <div class="galleries-photo-title">
+  	<%= best_in_place_if Conrategalleries::PhotoPolicy.new(current_user, photo).edit?, photo, :title, tabindex: "1", url: gallery_photo_path(photo.gallery, photo), as: :input, class: 'galleries-photo-title-editor', placeholder: t('.no_title') %>
+	</div>
+
+	<%#= get_destroy_link(photo, gallery_photo_path(photo.gallery, photo, format: :js), Conrategalleries::PhotoPolicy, true) %>
+</div>

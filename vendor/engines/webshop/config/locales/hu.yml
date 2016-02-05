@@ -1,0 +1,130 @@
+hu:
+  conratemenus:
+    menuabletypes:
+      'Conratewebshop::Category':
+        name: 'Webáruház kategória'
+  social_share_button:
+    share_to: 'Megosztás'
+  conratewebshop:
+    pricemanipulators:
+      index:
+        pricemanipulators: 'Ármódosítók'
+      new:
+        new_pricemanipulator: 'Új ármódosító'
+      edit:
+        edit_pricemanipulator: 'Ármódosító szerkesztése'
+    quantity_units:
+      names:
+        piece: 'darab'
+        meter: 'méter'
+        kilogram: 'kilogramm'
+        dekagram: 'dekagramm'
+        gram: 'gramm'
+        liter: 'liter'
+      abbrs:
+        piece: 'db'
+        meter: 'm'
+        kilogram: 'kg'
+        dekagram: 'dkg'
+        gram: 'g'
+        liter: 'l'
+    payment:
+      types:
+        online_payment: 'Banki átutalás'
+        cash_on_delivery: 'Szállításkor'
+    delivery:
+      types:
+        personal: 'Személyes átvétel'
+        postal: 'Postai kiszállítás'
+        company: 'Csomagküldő szolgálat'
+    sidebar:
+      categories: 'Új webáruház kategória'
+      orders: 'Rendelések'
+      pricemanipulators: 'Ármódosítók'
+    categories:
+      show:
+        new_product: 'Új termék'
+      new:
+        category: 'Kategóriák'
+      edit:
+        category: 'Kategória szerkesztése'
+    products:
+      product:
+        are_you_sure: 'Biztos benne, hogy törli a terméket?'
+        add_to_cart: 'Kosárba'
+      show:
+        price: 'Ár'
+        unitprice: 'Egységár'
+        add_to_cart: 'Kosárba'
+        back: 'Vissza'
+      new:
+        product: 'Új termék'
+      edit:
+        edit_product: 'Termék szerkesztése'
+    orders:
+      index:
+        orders: 'Rendelések'
+      show:
+        order: 'Rendelés'
+        products: 'Termékek'
+        back: 'Vissza'
+        success: 'Rendben!'
+      new:
+        order_details: 'Rendelés részletei'
+      form:
+        order: 'Megrendelés'
+        delivery_address: 'Szállítási cím'
+        billing_address: 'Számlázási cím'
+    carts:
+      cart:
+        cart: 'Kosár'
+        total: 'Összesen'
+        checkout: 'Vásárlás'
+        empty_cart: 'Ürítés'
+        product_added: 'A termék sikeresen belekerült a kosárba!'
+        thank_you_for_your_order: 'Köszönjük a vásárlást, kérjük figyelje postafiókját!'
+        your_cart_is_empty: 'Az Ön kosara üres.'
+  activerecord:
+    models:
+      'conratewebshop/category': 'Kategória'
+      'conratewebshop/product': 'Termék'
+      'conratewebshop/order': 'Rendelés'
+      'conratewebshop/quantity_unit': 'Mennyiségi egység'
+      'conratewebshop/pricemanipulator': 'Ármódosító'
+    attributes:
+      'conratewebshop/category':
+        id: 'AZ'
+        name: 'Név'
+        parent_id: 'Szülő'
+      'conratewebshop/product':
+        id: 'AZ'
+        name: 'Név'
+        description: 'Leírás'
+        price: 'Ár'
+        picture: 'Kép'
+        category_id: 'Kategória'
+        quantity: 'Mennyiség'
+        quantity_unit_id: 'Mennyiségi egység'
+        unitprice: 'Egységár'
+        unitprice_quantity_unit_id: 'Egységár mennyiségi egysége'
+      'conratewebshop/order':
+        id: 'AZ'
+        firstname: 'Vezetéknév'
+        secondname: 'Keresztnév'
+        thirdname: 'Utónév'
+        address: 'Cím'
+        email: 'E-mail'
+        mobile: 'Telefonszám'
+        pay_type: 'Fizetésmód'
+        delivery_type: 'Szállítás'
+        created_at: 'Létrehozva'
+        terms_of_service: 'Az általános szerződési feltételeket elfogadom'
+        billingisdelivery: 'A számlázási cím megegyezik a szállítási címmel'
+      'conratewebshop/pricemanipulator':
+        id: 'AZ'
+        name: 'Név'
+        order: 'Sorrend'
+        code: 'Képlet'
+        perproduct: 'Termékenként'
+        showifzero: 'Mindig látszódjon'
+        created_at: 'Létrehozva'

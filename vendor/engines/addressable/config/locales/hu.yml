@@ -1,0 +1,23 @@
+hu:
+  conrateaddressable:
+    addressable:
+      address_fields:
+        remove_address: 'Cím eltávolítása'
+    address:
+      types:
+        delivery: 'Szállítási cím'
+        billing: 'Számlázási cím'
+  activerecord:
+    models:
+      'conrateaddressable/address': 'Cím'
+    attributes:
+      'conrateaddressable/address':
+        id: 'AZ'
+        addresstype: 'Cím típusa'
+        country: 'Ország'
+        city: 'Város'
+        zip: 'Irányítószám'
+        publicplace: 'Közterület'
+        publicplace_type: 'Közterület neve'
+        number: 'Szám'
+        other: 'Egyéb'

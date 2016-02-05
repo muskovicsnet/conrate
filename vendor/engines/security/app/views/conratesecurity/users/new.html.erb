@@ -1,0 +1,20 @@
+<%= do_new({
+    title: t(".new_user"),
+    columns: [
+      Btemplater::NewDecorator.new(
+        :email,
+        Proc.new do |f, c|
+          f.input :email, autofocus: true
+        end
+      ),
+      :username,
+      :password,
+      :password_confirmation,
+    ],
+    item: @obj,
+    model: Conratesecurity::User,
+    url: conratesecurity.users_path,
+    back_url: conratesecurity.users_path,
+    method: :post
+  })
+%>

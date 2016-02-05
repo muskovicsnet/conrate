@@ -1,0 +1,14 @@
+<%= do_new({
+    title: t(".gallery"),
+    columns: [
+      :title,
+      :description,
+      :socials
+    ],
+    item: @obj,
+    model: Conrategalleries::Gallery,
+    url: conrategalleries.galleries_path,
+    back_url: main_app.home_path,
+    method: :post
+  })
+%>

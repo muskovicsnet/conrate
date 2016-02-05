@@ -1,0 +1,16 @@
+<%= do_new({
+    title: t(".new_pricemanipulator"),
+    columns: [
+      :name,
+      :order,
+      :code,
+      :perproduct,
+      :showifzero
+    ],
+    item: @obj,
+    model: Conratewebshop::Pricemanipulator,
+    url: conratewebshop.pricemanipulators_path,
+    back_url: conratewebshop.pricemanipulators_path,
+    method: :post
+  })
+%>

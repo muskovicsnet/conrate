@@ -1,0 +1,54 @@
+<%= render 'calculate_unit_price' %>
+<%= do_new({
+    title: t(".product"),
+    columns: [
+      :name,
+      Btemplater::NewDecorator.new(
+        :description,
+        Proc.new do |f, c|
+          f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'} }
+        end
+      ),
+      :price,
+      :quantity,
+      Btemplater::NewDecorator.new(
+        :quantity_unit_id,
+        Proc.new do |f, c|
+          f.input :quantity_unit_id, collection: Conratewebshop::QuantityUnit.all.map {|qu| [qu.get_name, qu.id]}
+        end
+      ),
+      :unitprice,
+      Btemplater::NewDecorator.new(
+        :unitprice_quantity_unit_id,
+        Proc.new do |f, c|
+          f.input :unitprice_quantity_unit_id, collection: Conratewebshop::QuantityUnit.all.map {|qu| [qu.get_name, qu.id]}, input_html: {onchange: 'unitprice_quantity_unit_changed()'}
+        end
+      ),
+      Btemplater::NewDecorator.new(
+        :picture_cache,
+        Proc.new do |f, c|
+          image_tag(@obj.picture_url, width: '100%') if @obj.picture?
+        end
+      ),
+      :picture,
+      Btemplater::NewDecorator.new(
+        :picture_cache,
+        Proc.new do |f, c|
+          f.input :picture_cache, :as => :hidden
+        end
+      ),
+      Btemplater::NewDecorator.new(
+        :category_id,
+        Proc.new do |f, c|
+          f.input :category_id, collection: Conratewebshop::Category.order(:name).each.map{ |c| [c.name, c.id] }
+        end
+      )
+    ],
+    item: [@obj.category, @obj],
+    model: Conratewebshop::Product,
+    url: conratewebshop.category_products_path(@obj.category),
+    back_url: conratewebshop.category_path(@obj.category),
+    form_params: {multipart: true},
+    method: :post
+  })
+%>

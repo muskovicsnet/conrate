@@ -1,0 +1,39 @@
+<div class="links">
+  <div class="nested-fields">
+    <div class="field">
+        <div class="form-group">
+          <%= f.label :addresstype %>
+          <%= f.select :addresstype, options_for_select([[t("conrateaddressable.address.types.#{Conrateaddressable::Address.addresstype.delivery.to_s}"), Conrateaddressable::Address.addresstype.delivery.to_s], [t("conrateaddressable.address.types.#{Conrateaddressable::Address.addresstype.billing.to_s}"), Conrateaddressable::Address.addresstype.billing.to_s]], f.object.addresstype), {}, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :country %>
+          <%= f.country_select :country, {}, {class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :zip %>
+          <%= f.text_field :zip, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :city %>
+          <%= f.text_field :city, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :publicplace %>
+          <%= f.text_field :publicplace, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :publicplace_type %>
+          <%= f.text_field :publicplace_type, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :number %>
+          <%= f.text_field :number, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :other %>
+          <%= f.text_field :other, class: 'form-control' %>
+        </div>
+    </div>
+    <%= link_to_remove_association t('.remove_address'), f %>
+  </div>
+</div>

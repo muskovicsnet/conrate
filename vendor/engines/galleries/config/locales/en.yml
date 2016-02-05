@@ -1,0 +1,61 @@
+en:
+  menus:
+    menus:
+      index:
+        galleries-galleriesmenu: 'Galleries'
+    menuabletypes:
+      'Conrategalleries::Gallery': 'Gallery'
+  about:
+    galleries:
+      name: 'Galleries'
+      summary: 'Upload photos and show in a photo gallery'
+  roles:
+    roles:
+      index:
+        galleries-galleriesrole: 'Manage gallery'
+        galleries-galleriesmenu: 'Gallery menu visible'
+  photos:
+    add_files: 'Add files...'
+    start_upload: 'Start upload'
+    cancel_upload: 'Cancel upload'
+    delete_selected: 'Delete selected'
+  conrategalleries:
+    galleries:
+      index:
+        title: 'Galleries'
+      show:
+        title: '%{title}'
+        upload_photos: 'Upload photos'
+      new:
+        title: 'New gallery'
+        cancel: 'Cancel'
+      edit:
+        title: 'Edit gallery'
+        cancel: 'Cancel'
+      table_bottom:
+        new: 'Create new gallery'
+    photos:
+      photo:
+        no_title: 'No title'
+        ok: 'OK'
+        cancel: 'Cancel'
+  activemodel:
+    models:
+      'conrategalleries/gallery': 'Gallery'
+    attributes:
+      'conrategalleries/gallery':
+        id: 'ID'
+        title: 'Title'
+        description: 'Description'
+        updated_at: 'Updated at'
+        created_at: 'Create at'
+  activerecord:
+    models:
+      'conrategalleries/gallery': 'Gallery'
+    attributes:
+      'conrategalleries/gallery':
+        id: 'ID'
+        title: 'Title'
+        description: 'Description'
+        updated_at: 'Updated at'
+        created_at: 'Create at'

@@ -1,0 +1,27 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a id="admin_navbar" class="navbar-brand fa fa-navicon btn" href="#" data-animation-pro-1 style="" data-animation-pro-trigger-1="click" data-animation-pro-target-1=".sidebar" data-animation-pro-step-1-1="display:block;left:0px;"></a>
+      <%= render 'conratethemes/shared/analytics' %>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <%= main_menu %>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <%= render 'notifications/shared/notifications', ntype: :reports, nicon: 'exclamation-triangle', nclass: 'danger' %>
+          <%= render 'notifications/shared/notifications', ntype: :messages, nicon: 'envelope', nclass: 'info'%>
+          <%= render 'notifications/shared/notifications', ntype: :notifications, nicon: 'bell', nclass: 'warning'%>
+        <% end %>
+        <%= render 'conratesecurity/shared/usermenu' %>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<%= do_index({
+  title: t(".orders"),
+  columns: [
+    :id,
+    :name,
+    Btemplater::IndexDecorator.new(:pay_type, lambda { |d, o| t("conratewebshop.payment.types.#{d}") }),
+    Btemplater::IndexDecorator.new(:created_at, lambda { |d, o| l(d) })
+  ],
+  items: @objects,
+  model: Conratewebshop::Order,
+    actions: [
+      Btemplater::ActionDecorator.new(
+        :show,
+        Proc.new { |objs| conratewebshop.order_path(objs, page: params[:page]) },
+        t('actions.show', scope: :btemplater),
+        Proc.new { |obj| obj.success ? 'check' : 'file' }
+      )
+    ]
+  })
+%>

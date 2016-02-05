@@ -1,0 +1,70 @@
+<h1><%= t('.order') %></h1>
+
+<table class="table table-responsive table-striped">
+  <tr>
+    <td>
+      <%= t('activerecord.attributes.conratewebshop/order.name') %>
+    </td>
+    <td>
+      <%= @obj.name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t('activerecord.attributes.conratewebshop/order.address') %>
+    </td>
+    <td>
+      <%= @obj.address %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t('activerecord.attributes.conratewebshop/order.mobile') %>
+    </td>
+    <td>
+      <%= @obj.mobile %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t('activerecord.attributes.conratewebshop/order.email') %>
+    </td>
+    <td>
+      <%= @obj.email %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t('activerecord.attributes.conratewebshop/order.pay_type') %>
+    </td>
+    <td>
+      <%= t("conratewebshop.payment.types.#{@obj.pay_type}") %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= t('activerecord.attributes.conratewebshop/order.delivery_type') %>
+    </td>
+    <td>
+      <%= t("conratewebshop.delivery.types.#{@obj.delivery_type}") %>
+    </td>
+  </tr>
+</table>
+
+<h3><%= t('.products') %></h3>
+
+<table class="table table-responsive table-condensed">
+  <% @obj.line_items.each do |line_item| %>
+    <tr>
+      <td>
+        <%= line_item.quantity %>
+      </td>
+      <td>
+      <%= link_to line_item.product.name, conratewebshop.category_product_path(line_item.product.category_id, line_item.product), target: '_blank' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t('.back'), conratewebshop.orders_path(page: params[:page]), class: 'btn btn-xl btn-default' %>
+<%= link_to t('.success'), conratewebshop.order_success_path(@obj, page: params[:page]), class: 'btn btn-xl btn-success', method: :post %>

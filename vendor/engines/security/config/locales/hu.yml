@@ -1,0 +1,51 @@
+hu:
+  devise:
+    registrations:
+      edit:
+        addresses: 'Címek'
+        add_address: 'Cím hozzáadása'
+  conratesecurity:
+    actions:
+      deactivate: 'Engedélyezés/Letiltás'
+    sidebar:
+      roles: 'Szerepkörök'
+      users: 'Felhasználók'
+    roles:
+      conratesecurity_user: 'Felhasználó'
+      conratesecurity_admin: 'Rendszergazda'
+      index:
+        roles: 'Szerepkörök'
+    users:
+      index:
+        users: 'Felhasználók'
+      new:
+        new_user: 'Új felhasználó'
+    shared:
+      usermenu:
+        my_profile: 'Adataim'
+        sign_out: 'Kijelentkezés'
+        sign_in: 'Bejelentkezés'
+        sign_up: 'Regisztráció'
+  activerecord:
+    models:
+      'conratesecurity/user': 'Felhasználó'
+      'conratesecurity/role': 'Szerepkör'
+    attributes:
+      'conratesecurity/user':
+        id: 'AZ'
+        email: 'E-mail'
+        mobile: 'Telefonszám'
+        firstname: 'Vezetéknév'
+        secondname: 'Keresztnév'
+        thirdname: 'Utónév'
+        password: 'Jelszó'
+        password_confirmation: 'Jelszó megerősítése'
+        current_password: 'Jelenlegi jelszó'
+        remember_me: 'Emlékezzen rám'
+        username: 'Becenév'
+        created_at: 'Létrehozva'
+      'conratesecurity/role':
+        id: 'AZ'
+        name: 'Név'
+        my_name: 'Név'
+        created_at: 'Létrehozva'

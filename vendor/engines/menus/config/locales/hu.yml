@@ -1,0 +1,30 @@
+hu:
+  enumerize:
+    acl:
+      access_type:
+        new: 'Új'
+  conratemenus:
+    sidebar:
+      menus: 'Menüpontok'
+    menus:
+      new:
+        new_menu: 'Új menüpont'
+      edit:
+        edit: 'Menüpont szerkesztése'
+      index:
+        menus: 'Menüpontok'
+        conratemenus-contentsmenu: 'Tartalmak'
+        conratemenus-systemmenu: 'Rendszer'
+        conratemenus-mainmenu: 'Főmenü'
+        conratemenus-usermenu: 'Felhasználói menü'
+        conratemenus-footermenu: 'Láblécmenü'
+  activerecord:
+    models:
+      'conratemenus/menu': 'Menü'
+    attributes:
+      'conratemenus/menu':
+        id: 'AZ'
+        title: 'Név'
+        menuable_id: 'Elem azonosító'
+        menuable_type: 'Elem típus'
+        created_at: 'Létrehozva'

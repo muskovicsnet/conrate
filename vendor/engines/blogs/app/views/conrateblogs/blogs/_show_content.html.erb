@@ -1,0 +1,7 @@
+<div>
+  <%= @obj.description %>
+</div>
+
+<div id="conrateblogs_blog_posts">
+  <%= render @obj.posts.order('created_at desc') %>
+</div>

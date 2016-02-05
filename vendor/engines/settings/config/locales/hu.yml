@@ -1,0 +1,18 @@
+hu:
+  conratemenus:
+    sidebar:
+      settings: 'Beállítások'
+  conratesettings:
+    settings:
+      index:
+        settings: 'Beállítások'
+      edit:
+        setting: 'Beállítás szerkesztése'
+  activerecord:
+    models:
+      'settings': 'Beállítás'
+    attributes:
+      'settings':
+        var: 'Kulcs'
+        value: 'Érték'
+        localizable: 'Nyelvesíthető'

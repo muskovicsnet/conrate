@@ -1,0 +1,36 @@
+ ☐ Alsó gombokat div-be
+ ☐ title gombokat span-ba
+ ☐ dependency kezelés
+ ☐ webshop ár formázása
+ ☐ alkategóriák
+     - bal oldalt aminél parent nil
+     -
+ ☐ Rendelésre árak
+ ☐ Rendelés index ikonok fordítva
+ ☐ http:// linkek törlése
+ ☐ Új menünél menü szerkesztése van
+ ☐ Captcha
+fix, értéktől, várostól, fizetési módtól, súlytól, mérettől függ
+ ☐ Webshop
+ 	☐ Fix szállítási díj
+  ☐ Események
+  ☐ Nyelvek
+   ☐ Súlytól függ a szállítási díj
+   ☐ várostól függ a szállítási díj
+      ☐ A termékeknél lehetnek variációk is (méret, szín, stb), ezeket a vevők egy legördülő menüből választhatják ki.
+      ☐  a fizetési módok között ott van a PayPal, a banki átutalás és az utánvét is
+      ☐  leltár
+      ☐ adósávok külföldre
+      ☐ (például megadhatják, hogy milyen szöveget gravírozz az ajándéktárgyaidba, vagy választhatnak többféle, egyénileg kialakítható legördülő menüből)
+      ☐ CSV export, import
+      ☐ Beállíthatsz akciós árat például egy-egy időszakra vonatkozóan, vagy engedélyezheted a kuponok használatát, A kuponoknak lejárati határidőt is megadhatsz, vagy úgy is beállíthatod a rendszert, hogy akinek kuponja van (vagy tudja a jelszót :-) ), annak ingyenes a házhozszállítás.
+      ☐ de akár azt is, hogy egy személy csak egy darabot vásárolhat egy adott termékből.
+      ☐  négyféle kedvezmény-szintet állíthatsz be, így könnyen kiszolgálhatod viszonteladóidat vagy törzsvásárlóidat, vagy megadhatod, hogy mekkora mennyiségi árkedvezményt adsz. Akár olyan bonyolult akciót is beállíthatsz, mint “15 % kedvezmény a klubtagoknak, ha legalább két darabot vesznek egy termékből, és 25 % kedvezmény, ha több, mint ötöt vásárolnak”, vagy például adhatsz ajándékba egy laptop-táskát, ha valaki az új laptopja mellé valamilyen kiegészítőt, például külső billentyűzetet vagy egeret is vásárol.
+      ☐ A termék szerkesztőjében természetesen megadhatsz kapcsolódó (upsell) és helyettesítő (cross-sale) termékeket is.
+      ☐ Follow Up Emails nevű kiegészítővel a vásárlóidat később is eléred e-mailen, tehát az új termékeid bevezetésekor
+      ☐  SEO irányelvek
+      ☐ statisztika
+      ☐ nem kötelező a regisztráció
+      ☐ kereshetnek
+      ☐ e-mail szövege átírható
+      ☐ 

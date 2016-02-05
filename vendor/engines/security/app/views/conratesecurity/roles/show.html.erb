@@ -1,0 +1,14 @@
+<%= do_show({
+    title: t(@obj.my_name),
+    columns: [
+      Btemplater::ShowDecorator.new(:id, {}),
+      Btemplater::ShowDecorator.new(:my_name, {}),
+      Btemplater::ShowDecorator.new(:created_at, {}),
+    ],
+    item: @obj,
+    model: Conratesecurity::Role,
+    url: conratesecurity.roles_path,
+    actions: [
+    ]
+  })
+%>

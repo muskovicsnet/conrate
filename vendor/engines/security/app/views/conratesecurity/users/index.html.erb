@@ -1,0 +1,27 @@
+<%=
+  do_index({
+    title: t('.users'),
+    rowclass: lambda { |d| d.deactivated ? 'deactivated' : (d.confirmed? ? 'confirmed' : 'unconfirmed') },
+    columns: [
+      :id,
+      :email,
+      Btemplater::IndexDecorator.new(:created_at, Proc.new { |d| l(d) })
+    ],
+    items: @objects,
+    model: Conratesecurity::User,
+    actions: [
+      :show,
+      :edit,
+      :destroy,
+      Btemplater::ActionDecorator.new(
+        :deactivate,
+        Proc.new { |objs| conratesecurity.user_deactivate_path(objs, page: params[:page]) },
+        t('actions.deactivate', scope: :conratesecurity),
+        Proc.new { |obj| obj.deactivated ? 'check' : 'ban' },
+        method: :post
+      )
+    ]
+  })
+%>
+
+<%= do_new_button({model: Conratesecurity::User.new}) %>

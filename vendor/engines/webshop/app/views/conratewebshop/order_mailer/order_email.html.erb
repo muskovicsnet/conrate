@@ -1,0 +1,33 @@
+<style media="screen">
+  table {
+    border-collapse:collapse;
+    width:100%;
+  }
+  th {
+    background-color:#4CAF50;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+<h1>Üdvözöljük <%= @user.username.blank? ? @user.email : @user.username %>!</h1>
+<p>
+  Rendelését megkaptuk! A vásárlás részletei:
+</p>
+<table style="">
+  <tr>
+    <th>Mennyiség</th>
+    <th>Név</th>
+    <th>Ár</th>
+  </tr>
+  <% @order.line_items.each do |li| %>
+    <tr>
+      <td style="text-align:right"><%= li.quantity %>db</td>
+      <td style="text-align:left"><%= li.product.name %></td>
+      <td style="text-align:right"><%= number_to_currency li.product.price %></td>
+    </tr>
+  <% end %>
+</table>
+<p style="text-align:right;">
+   Köszönjük vásárlását!
+</p>

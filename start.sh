@@ -1,0 +1,16 @@
+export FACEBOOK_ID=xxx
+export FACEBOOK_SECRET=xxx
+export DATABASE_NAME=conrate_development
+export DATABASE_USERNAME=postgres
+export DATABASE_PASSWORD=adminadmin
+export DATABASE_HOST=localhost
+export SECRET_KEY_BASE=15a283092a5bd2a8d5958e13da94b88d2bf06d22376be453927cf02165165c5153fbbfb549bc3d9160944bbdb5ff59aac675a3a7702ccda263b03a79a648e0fa
+export DEFAULT_FROM=no-reply@example.com
+export DEVISE_SECRET_KEY=a86a5e3e6ee5e6d4e92894144e7651c0b5f6d1e7880447d0fc482956259eaf7728c984653cfbe83b9f3794a2e52b355abcfe9659904331a977184e5afa88e7f6
+export DEVISE_MAILER_SENDER=please-change-me-at-config-initializers-devise@example.com
+export APP_DOMAIN=localhost:3000
+export MAILER_APP_DOMAIN=localhost:3000
+export MAILER_FROM=admin@localhost
+export QUEUE_NAME=conrate
+
+puma -C ./config/puma.rb

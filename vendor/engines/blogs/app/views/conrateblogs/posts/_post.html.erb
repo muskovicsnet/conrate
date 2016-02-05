@@ -1,0 +1,7 @@
+<h2>
+  <%= link_to post.title, conrateblogs.blog_post_path(post.blog_id, post) %>
+  <%= edit_action(nil, [post.blog, post], Conrateblogs::PostPolicy.new(current_user, @obj).edit?) %><%= destroy_action(nil, [post.blog, post], Conrateblogs::PostPolicy.new(current_user, @obj).destroy?) %>
+</h2>
+<div>
+  <%= post.content.html_safe %>
+</div>

@@ -1,0 +1,65 @@
+hu:
+  about:
+    galleries:
+      name: 'Galériák'
+      summary: 'Fényképek feltöltése galériákba és megjelenítése'
+  roles:
+    roles:
+      index:
+        galleries-galleriesrole: 'Galéria kezelése'
+        galleries-galleriesmenu: 'Galéria menü látható'
+  conratemenus:
+    menuabletypes:
+      'Conrategalleries::Gallery':
+        name: 'Galéria'
+  photos:
+    add_files: 'Fájlok hozzáadása...'
+    start_upload: 'Feltöltés indítása'
+    cancel_upload: 'Feltöltés megszakítása'
+    delete_selected: 'Kijelöltek törlése'
+  conrategalleries:
+    sidebar:
+      galleries: 'Új galéria'
+    menuabletypes:
+      'Galleries::Gallery': 'Galéria'
+    galleries:
+      index:
+        galleries: 'Galériák'
+      show:
+        gallery: '%{title}'
+        upload_photos: 'Képek feltöltése'
+      new:
+        gallery: 'Új galéria'
+        cancel: 'Mégsem'
+      edit:
+        gallery: 'Galéria szerkesztése'
+        cancel: 'Mégsem'
+      table_bottom:
+        new: 'Új galéria létrehozása'
+    photos:
+      photo:
+        no_title: 'Nincs cím'
+        ok: 'OK'
+        cancel: 'Mégsem'
+  activemodel:
+    models:
+      'galleries/gallery': 'Galéria'
+    attributes:
+      'galleries/gallery':
+        id: 'AZ'
+        title: 'Cím'
+        description: 'Leírás'
+        socials: 'Közösségi megosztások'
+        updated_at: 'Módosítva'
+        created_at: 'Létrehozva'
+  activerecord:
+    models:
+      'conrategalleries/gallery': 'Galéria'
+    attributes:
+      'conrategalleries/gallery':
+        id: 'AZ'
+        title: 'Cím'
+        description: 'Leírás'
+        socials: 'Közösségi megosztások'
+        updated_at: 'Módosítva'
+        created_at: 'Létrehozva'

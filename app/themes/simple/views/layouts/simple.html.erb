@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= display_meta_tags site: 'Conrate', reverse: true %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "#{Settings['conratethemes.theme']}/all", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'conratethemes/shared/analytics' %>
+  </head>
+  <body>
+    <%= render partial: 'conratethemes/shared/sidebar' %>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Fixed navbar -->
+      <%= render 'layouts/navbar' %>
+      <!-- Begin page content -->
+      <div class="container">
+        <%= render 'conratethemes/shared/messages' %>
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy; 2010-2015 muskovics.net</p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.rawgit.com/MhdAljuboori/9debb0ab3f04e3fdc5ce/raw/animator-pro.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+  </body>
+</html>

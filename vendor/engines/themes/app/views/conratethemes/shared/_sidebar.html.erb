@@ -1,0 +1,13 @@
+<% if user_signed_in? && current_user.has_role?(:conratesecurity_admin) %>
+  <div class="" data-animation-pro-1>
+    <div class="sidebar-container">
+      <div class="sidebar" style="max-width:100%;left:-400px" data-animation-pro-1>
+        <div style="width:100%;text-align:right;">
+        <button type="button" class="btn btn-danger btn-lg" data-animation-pro-1 style="" data-animation-pro-trigger-1="click" data-animation-pro-target-1=".sidebar" data-animation-pro-step-1-1="left:-400px;">
+        <i class="fa fa-remove"></i></button>
+        </div>
+        <%= admin_menu %>
+      </div>
+    </div>
+  </div>
+<% end %>

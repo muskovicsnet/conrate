@@ -1,0 +1,58 @@
+<script type="text/javascript">
+  function checkCheckbox() {
+    debugger
+    var addressvalue = $('#addresscheckbox').prop('checked');
+    if(addressvalue) {
+      $('.billing_address_div').hide();
+    } else {
+      $('.billing_address_div').show();
+    }
+  }
+
+  $(document).ready(function() {
+    checkCheckbox();
+  });
+</script>
+
+<%= simple_form_for(@order) do |f| %>
+  <%= f.input :firstname, autofocus: true %>
+  <%= f.input :secondname %>
+  <%= f.input :thirdname %>
+  <%= f.input :mobile %>
+  <%= f.input :email, input_html: { value: current_user.try(:email), disabled: true } %>
+
+  <div class="delivery_address_div">
+    <h3><%= t('.delivery_address') %></h3>
+    <%= f.fields_for :delivery_address do |ff| %>
+      <%= ff.input :addresstype %>
+      <%= ff.input :country %>
+      <%= ff.input :city %>
+      <%= ff.input :zip %>
+      <%= ff.input :publicplace %>
+      <%= ff.input :publicplace_type %>
+      <%= ff.input :number %>
+      <%= ff.input :other %>
+    <% end %>
+  </div>
+
+  <%= f.input :billingisdelivery, input_html: { onclick: "checkCheckbox()", id: 'addresscheckbox' } %>
+
+  <div class="billing_address_div">
+    <h3><%= t('.billing_address') %></h3>
+    <%= f.fields_for :billing_address do |ff| %>
+      <%= ff.input :addresstype %>
+      <%= ff.input :country %>
+      <%= ff.input :city %>
+      <%= ff.input :zip %>
+      <%= ff.input :publicplace %>
+      <%= ff.input :publicplace_type %>
+      <%= ff.input :number %>
+      <%= ff.input :other %>
+    <% end %>
+  </div>
+
+  <%= f.input :pay_type, collection: Conratewebshop::Order::PAYMENT_TYPES.map {|p| [t("conratewebshop.payment.types.#{p}"), p] }, include_blank: false %>
+  <%= f.input :delivery_type, collection: Conratewebshop::Order::DELIVERY_TYPES.map {|p| [t("conratewebshop.delivery.types.#{p}"), p] }, include_blank: false %>
+  <%= f.input :terms_of_service, as: :boolean %>
+  <%= f.submit t('.order'), class: 'btn btn-primary' %>
+<% end %>
