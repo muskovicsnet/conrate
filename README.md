@@ -1,4 +1,6 @@
-# Conrate
+# Conrate - Rails based CMS, gallery and webshop
+
+[![Build Status](https://semaphoreci.com/api/v1/mg/conrate/branches/master/badge.svg)](https://semaphoreci.com/mg/conrate)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
