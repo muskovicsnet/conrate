@@ -14,7 +14,7 @@ RSpec.feature 'Blogs::Blogs', type: :feature do
       visit conrateblogs.edit_blog_path(blog)
       expect(page).to have_content('Nincs joga megtekinteni az oldalt!')
       expect(current_path).to eq(main_app.home_path)
-    endé
+    end
   end
 
   describe 'If user is logged in ' do
